@@ -1,21 +1,27 @@
 
+struct Point{
+    x:f32,
+    y:f32,
+}
 
+enum e1{
+    z1,
+    z2(i32),
+   z3{n:i32},
+}
 
 fn main() {
  
-   let x:i32=20;
-   let y:i32=35;
-   let max:i32=CompareValue(x,y);
-  println!("max={}",max);
+
+let t1=e1::z1;
+let t2=e1::z2(10);
+let t3=e1::z3{n:70};
+
+match t1{
+    e1::z1=>println!("=z1");
+    e1::z2(10)=>println!("=z2");
+    e1::z3{n:70}=>println!("=z3");
+}
+  
 }
 
-fn CompareValue(v1:i32,v2:i32)->i32
-{
-    if v1>v2
-    {
-        return v1;
-    }else
-    {
-        return v2;
-    }
-}
