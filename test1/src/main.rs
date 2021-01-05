@@ -1,27 +1,42 @@
+enum event
+{
+    event_1,
+    event_2(String,String),
+    event_3{v1:i16,v2:f32,v3:char},
+}
+fn main()
+{
 
-struct Point{
-    x:f32,
-    y:f32,
+let case_1=event::event_1;
+let case_2=event::event_2("abc".to_owned(),"def".to_owned());
+let case_3=event::event_3{v1:10,v2:12.1,v3:'a'};/**/
+matching(case_1);
+matching(case_2);
+matching(case_3);
 }
 
-enum e1{
-    z1,
-    z2(i32),
-   z3{n:i32},
+fn matching(v:event)
+{
+    match v
+    {
+        event::event_1=>respond_1(),
+        event::event_2(str1,str2)=>respond_2(),
+        event::event_3{v1,v2,v3}=>respond_3(),
+    }
+
+
 }
 
-fn main() {
- 
-
-let t1=e1::z1;
-let t2=e1::z2(10);
-let t3=e1::z3{n:70};
-
-match t1{
-    e1::z1=>println!("=z1");
-    e1::z2(10)=>println!("=z2");
-    e1::z3{n:70}=>println!("=z3");
+fn respond_1()
+{
+    println!("respond_1 of event_1 ");
 }
-  
+fn respond_2()
+{
+    println!("respond_2 of event_2 ");
+}
+fn respond_3()
+{
+    println!("respond_3 of event_3 ");
 }
 
