@@ -1,8 +1,10 @@
-mod f9_9_Muli_table;
-use f9_9_Muli_table::{f9_9_show,f9_9_show2,f9_9_show3};
+mod srcFile_2;
+use srcFile_2::{num_sort,fn_temp};
+mod srcFile_3;
+use srcFile_3::{fn_temp2};
 fn main() 
 {
-   f9_9_show();
-   f9_9_show2();
-   f9_9_show3();
+ // num_sort();
+ //fn_temp();
+  fn_temp2();
 }
