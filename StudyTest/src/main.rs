@@ -1,7 +1,11 @@
-mod srcFile_5;
-use srcFile_5::{method1,funcation1};
+mod srcFile_6;
+use srcFile_6::{funcation1,funcation2,funcation3,funcation4};
 fn main() 
 {
-//  method1();
-funcation1();
+
+//funcation1::<i32,char>(39,'a');
+//funcation2();
+//funcation3();
+funcation4();
+
 }
