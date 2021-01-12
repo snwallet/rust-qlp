@@ -67,16 +67,16 @@ pub fn enumUse()
         key,
         event1(char),
         event2(char,String,i32),
-  //      event3{a:String,b:char},
+       event3{a:String,b:char},
     }
 
     let (mut e1,mut e2,mut e3,mut e4):(en,en,en,en);
     e1=en::key;
     e2=en::event1('a');
     e3=en::event2('b',String::from("abc"),10);
-//    e4=en::event3{a:String::from("def"),b:'d'};
+    e4=en::event3{a:String::from("def"),b:'d'};
 
-    match e3
+    match e1
     {
         en::key=>
         {
@@ -91,11 +91,10 @@ pub fn enumUse()
         {
             print!("event2\n");
         }
- /*       en::event3{a:String::from("gtr"),b:'u'}=>
+        en::event3{a,b}=>
         {
             print!("event3\n");
-        },*/
-
+        },
     }
 
 }
